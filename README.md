@@ -8,10 +8,48 @@
 
 ### 默认配置
 
-- 源列表：CentOS，EPEL，Ubuntu，Pypi
-- 镜像路径：/mirrors/
-- 程序路径：/home/mirrors/tunasync/
-- 日志路径：/mirrors/log/
+- 镜像路径：/data/mirrors/web/
+- 程序路径：/data/mirrors/tunasync/
+- 日志路径：/data/mirrors/log/
+
+### 安装部署
+- 获取代码
+    ```
+    # mkdir -p /data/mirrors && cd /data/mirrors
+    # git clone OUR_PROJECT_URL
+    ```
+- 初始化
+    ```
+    # /data/mirrors/tunasync/scripts/setup.sh
+    ```
+- 启动
+    ```
+    ## 主管理服务
+    # systemctl start tunasync-manager
+    ## 按需启动镜像同步
+    # systemctl start tunasync-anaconda
+    # systemctl start tunasync-bioconductor
+    # systemctl start tunasync-centos
+    # systemctl start tunasync-centos-vault
+    # systemctl start tunasync-CPAN
+    # systemctl start tunasync-CRAN
+    # systemctl start tunasync-debuginfo
+    # systemctl start tunasync-epel
+    # systemctl start tunasync-pypi
+    ```
+- 配置http服务  
+  以apache为例
+    ```
+    # cat << EOF >> /etc/httpd/conf.d/mirrors.conf 
+    DocumentRoot "/data/mirrors/web"
+    <Directory "/data/mirrors/web">
+        Options Indexes FollowSymLinks
+        IndexOptions FancyIndexing NameWidth=* IconWidth=16 IconHeight=16
+        AllowOverride None
+        Require all granted
+    </Directory>
+    EOF
+    ```
 
 ### 其他
 
