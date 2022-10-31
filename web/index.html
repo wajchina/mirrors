@@ -97,18 +97,31 @@
     <div id="show_time"></div>
 </div>
 <script type="text/javascript">
-window.onload = function() {
-    var show = document.getElementById("show_time");
-    setInterval(function() {
-        var time = new Date(); // 程序计时的月从0开始取值后+1
-        var m = time.getMonth() + 1;
-        var t = time.getFullYear() + "-" + m + "-"
-                + time.getDate() + " " + time.getHours() + ":"
-                + time.getMinutes() + ":" + time.getSeconds();
-        show.innerHTML = t;
-    }, 1000);
-};
-</script>
+    window.onload = function() {
+        var show = document.getElementById("show_time");
+        setInterval(function() {
+            var now = new Date();
+            var year = now.getFullYear();    
+            var month = now.getMonth() + 1;   
+            var day = now.getDate();      
+            var hh = now.getHours();      
+            var mm = now.getMinutes();     
+            var ss = now.getSeconds();     
+            var clock = year + "-";
+            if (month < 10) clock += "0";
+            clock += month + "-";
+            if (day < 10) clock += "0";
+            clock += day + " ";
+            if (hh < 10) clock += "0";
+            clock += hh + ":";
+            if (mm < 10) clock += '0';
+            clock += mm + ":";
+            if (ss < 10) clock += '0';
+            clock += ss;
+            show.innerHTML = clock;
+        }, 1000);
+    };
+    </script>
 
 </body>
 </html>
