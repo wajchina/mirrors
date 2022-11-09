@@ -19,6 +19,10 @@
     # git clone OUR_PROJECT_URL
     ```
 - 初始化
+  * 按需修改变量`tunasync/scripts/setup.sh`
+    + `PREFIX_MIRROR` 镜像目录
+    + `MY_MIRROR_SITE_ADDRESS` 站点域名或IP地址，用于使用帮助文档
+  * 执行初始化脚本
     ```
     # /data/mirrors/tunasync/scripts/setup.sh
     ```

@@ -1,8 +1,10 @@
 #!/bin/bash
 
 PREFIX_MIRROR="/data/mirrors"
+MY_MIRROR_SITE_ADDRESS="127.0.0.1"
 
 echo "0. PREFIX_MIRROR is ${PREFIX_MIRROR}"
+echo "0. MY_MIRROR_SITE_ADDRESS is ${MY_MIRROR_SITE_ADDRESS}"
 
 echo "1. install required packages"
 yum -y install libcgroup-tools rsync
@@ -25,5 +27,8 @@ rsync -avP ${PREFIX_MIRROR}/tunasync/systemd/ /usr/lib/systemd/system/ && system
 echo "5. create tunasync log directory"
 mkdir -pv ${PREFIX_MIRROR}/log/tunasync/
 
-echo "6. change permission"
+echo "6. replace to my mirror site address"
+sed -i "s/mymirrorsite/${MY_MIRROR_SITE_ADDRESS}/g" ${PREFIX_MIRROR}/web/.help/*.html
+
+echo "7. change permission"
 chown -Rv tunasync:tunasync ${PREFIX_MIRROR}

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>pypi镜像使用帮助</title>
+    <link rel="stylesheet" type="text/css" href="/.resource/css/mirror.css" media="screen" />
+    <script type="text/javascript" src="/.resource/js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="/.resource/js/helptool.js"></script>
+</head>
+
+<body>
+
+<h1>pypi镜像使用帮助</h1>
+
+<div id="mirror-data">
+
+    <h3>更新时间</h3>
+    <p>每5分钟更新一次</p>
+</div>
+
+<!-- hr -->
+<div class="hr"><hr></div>
+
+<div id="mirror-usage">
+    <h3>使用说明</h3>
+
+    <!-- 1 -->
+    <h4>一、临时使用</h4>
+    <p>使用pip的时候在后面加上-i参数，指定pip源：</p>
+<pre>
+pip install xxx -i http://mymirrorsite/pypi/web/simple/ --trusted-host mymirrorsite
+</pre>
+	<p>替换“xxx”为你需要安装的模块名称。</p>
+    <!-- // end 1 -->
+
+    <!-- 2 -->
+    <h4>二、永久修改使用</h4>
+    <p>Linux/Unix中使用：</p>
+    <pre>~/.pip/pip.conf</pre>
+    <p>添加或修改pip.conf（如果不存在，创建一个）</p>
+<pre>
+[global]
+index-url = http://mymirrorsite/pypi/web/simple/
+[install]
+trusted-host = mymirrorsite
+</pre>
+    <br>
+    <p>Windows中使用：</p>
+    <pre>%APPDATA%/pip/pip.ini</pre>
+	<p>1.打开此电脑，在最上面的的文件夹窗口输入：%APPDATA%</p>
+	<p>2.按回车跳转进入目录，并新建一个文件夹：pip</p>
+	<p>3.创建文件：pip.ini</p>
+    <p>添加或修改pip.ini（如果不存在，创建一个）</p>
+<pre>
+[global]
+index-url = http://mymirrorsite/pypi/web/simple/
+[install]
+trusted-host = mymirrorsite
+</pre>
+    <!-- // end 2 -->
+</div>
+
+<!-- hr -->
+<div class="hr"><hr></div>
+
+<div id="mirror-links">
+    <h3>相关链接</h3>
+    <ul>
+        <li>官方主页: <a href="https://www.python.org/" target="_blank">https://www.python.org/</a></li>
+        <li>邮件列表: <a href="https://www.python.org/community/lists/" target="_blank">https://www.python.org/community/lists/</a></li>
+        <li>版本下载: <a href="https://pypi.org/project/pip/" target="_blank">https://pypi.org/project/pip/</a></li>
+        <li>官方仓库搜索: <a href="https://pypi.org/" target="_blank">https://pypi.org/</a></li>
+        <li>文档: <a href="https://pypi.org/help/" target="_blank">https://pypi.org/help/</a></li>
+    </ul>
+</div>
+
+<div id="footer">
+    <p id="copyright"></p>
+</div>
+
+</body>
+</html>

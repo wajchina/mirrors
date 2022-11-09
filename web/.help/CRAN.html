@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CRAN镜像使用帮助</title>
+    <link rel="stylesheet" type="text/css" href="/.resource/css/mirror.css" media="screen" />
+    <script type="text/javascript" src="/.resource/js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="/.resource/js/helptool.js"></script>
+</head>
+
+<body>
+
+<h1>CRAN镜像使用帮助</h1>
+
+<div id="mirror-data">
+
+    <h3>更新时间</h3>
+    <p>每天更新一次</p>
+</div>
+
+<!-- hr -->
+<div class="hr"><hr></div>
+
+<div id="mirror-usage">
+    <h3>使用说明</h3>
+<p>
+    <a href="https://cran.r-project.org/">CRAN</a> (The Comprehensive R Archive Network) 镜像源配置文件之一是 .Rprofile (linux 下位于 ~/.Rprofile )。
+</p>
+    <p>在文末添加如下语句:</p>
+<pre>
+options("repos" = c(CRAN="http://mymirrorsite/CRAN/"))
+</pre>
+    <p>打开 R 即可使用该 CRAN 镜像源安装 R 软件包。</p>
+
+</div>
+
+<!-- hr -->
+<div class="hr"><hr></div>
+
+<div id="mirror-links">
+    <h3>相关链接</h3>
+    <ul>
+        <li>官方主页: <a href="https://cran.r-project.org/" target="_blank">https://cran.r-project.org/</a></li>
+    </ul>
+</div>
+
+<div id="footer">
+    <p id="copyright"></p>
+</div>
+
+</body>
+</html>
