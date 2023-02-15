@@ -1,0 +1,15 @@
+[Unit]
+Description = TUNA mirrors sync worker-rocky
+After=network.target
+
+[Service]
+Type=simple
+User=tunasync
+PermissionsStartOnly=true
+ExecStartPre=/usr/bin/cgcreate -t tunasync -a tunasync -g memory:tunasync
+ExecStart=/data/mirrors/tunasync/bin/tunasync worker -c /data/mirrors/tunasync/conf/worker-rocky.conf --with-systemd
+ExecReload=/bin/kill -SIGHUP 
+ExecStopPost=/usr/bin/cgdelete memory:tunasync
+
+[Install]
+WantedBy=multi-user.target
