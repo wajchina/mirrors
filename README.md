@@ -32,6 +32,8 @@
     # systemctl start tunasync-manager
     ## 按需启动镜像同步
     # systemctl start tunasync-anaconda
+    # systemctl start tunasync-almalinux
+    # systemctl start tunasync-almalinux-vault
     # systemctl start tunasync-bioconductor
     # systemctl start tunasync-centos
     # systemctl start tunasync-centos-vault
@@ -39,6 +41,8 @@
     # systemctl start tunasync-CRAN
     # systemctl start tunasync-debuginfo
     # systemctl start tunasync-epel
+    # systemctl start tunasync-rocky
+    # systemctl start tunasync-rocky-vault
     # systemctl start tunasync-pypi
     ```
 - 配置http服务  
