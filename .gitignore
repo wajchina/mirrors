@@ -1,5 +1,12 @@
 # https://git-scm.com/docs/gitignore
 
+# ignore web mirrors
+web/
+!web/.help/
+!web/.resource/
+!web/index.html
+!web/favicon.ico
+
 .DS_Store
 *.retry
 
